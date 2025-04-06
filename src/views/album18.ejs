@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Contenedor de la caja fuerte -->
+    <div class="container_1">
+        <center>
+            <div class="caja1">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <div class="btns"><span class="btn prev"></span></div>
+                    </a>
+                    <div class="carousel-inner">
+                        <% images.forEach((image, index)=> { %>
+                            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                                <img class="d-block w-100" src="<%= image %>" alt="Slide <%= index + 1 %>">
+                            </div>
+                            <% }) %>
+                    </div>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <div class="btns"><span class="btn next"></span></div>
+                    </a>
+                </div>
+            </div>
+        </center>
+
+        <div id="seccion-galer" class="seccion-galeria_F">
+            <div class="titulo-galeria">
+                <center>
+                    <h1>Nuestras Fotos</h1>
+                </center>
+            </div>
+            <div class="caja-fuerte">
+                <div class="fotos">
+                    <br>
+                    <% images.forEach((image, index)=> { %>
+                        <div class="<%= index === 0 ? 'active' : '' %>">
+                            <img class="d-block w-100" src="<%= image %>" alt="Slide <%= index + 1 %>">
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Importar jQuery, Popper.js y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <script>
+        let prev = document.querySelector('.prev');
+        let next = document.querySelector('.next');
+        let box = document.querySelector('.box');  <!-- Corregido: clase '.box' en lugar de '.caja' -->
+
+        let degrees = 0;
+
+        // Rotar la caja hacia la izquierda
+        prev.addEventListener('click', function () {
+            degrees += 45;
+            box.style.transform = `perspective(1000px) rotateY(${degrees}deg)`;
+        });
+
+        // Rotar la caja hacia la derecha
+        next.addEventListener('click', function () {
+            degrees -= 45;
+            box.style.transform = `perspective(1000px) rotateY(${degrees}deg)`;
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+<!-- 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Image Gallery</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <span style="--i:1;"><img src="/14 de febrero/WhatsApp Image 2025-03-30 at 11.00.40 (2).jpeg" alt=""></span>
+          
+        </div>
+        <div class="btns">
+            <div class="btn prev"></div>
+            <div class="btn next"></div>
+        </div>
+    </div>
+
+    <script>
+        let prev = document.querySelector('.prev');
+        let next = document.querySelector('.next');
+        let box = document.querySelector('.box');
+
+        let dagrees = 0;
+        
+        prev.addEventListener('click', function(){
+            dagrees += 45;
+            box.style = `transform: perspective(1000px) rotateY(${dagrees}deg)`;
+        })
+        next.addEventListener('click', function(){
+            dagrees -= 45;
+            box.style = `transform: perspective(1000px) rotateY(${dagrees}deg)`;
+        })
+    </script>
+</body>
+</html>
+
+-->

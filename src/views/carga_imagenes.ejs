@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="/estilo_album.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Galería de Álbumes</h1>
+        
+        <% for (let album in albums) { %>
+            <div class="album">
+                <h2><%= album %></h2>
+                <div class="images">
+                    <% albums[album].forEach(image => { %>
+                        <img src="<%= image %>" alt="Imagen en <%= album %>">
+                    <% }); %>
+                </div>
+            </div>
+        <% } %>
+
+        <a href="/">Volver a la página principal</a>
+    </div>
+</body>
+</html>

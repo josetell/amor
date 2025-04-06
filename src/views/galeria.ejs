@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen</title>
+    <link rel="stylesheet" href="/estilo_album.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Subir Imagen</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="albumName">Nombre del Álbum:</label>
+            <input type="text" id="albumName" name="albumName" placeholder="Ingresa el nombre del álbum" required><br><br>
+            
+            <input type="file" name="image" id="imageInput" accept="image/*" required>
+            <button type="submit">Subir Imagen</button>
+        </form>
+        <div id="message"></div>
+        <div id="imagePreview"></div>
+    </div>
+
+    <script>
+        document.getElementById("imageInput").addEventListener("change", function(event) {
+            const preview = document.getElementById("imagePreview");
+            preview.innerHTML = "";
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById("uploadForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            const fileInput = document.getElementById("imageInput");
+            const albumNameInput = document.getElementById("albumName");
+
+            if (!fileInput.files.length) {
+                document.getElementById("message").textContent = "Por favor, selecciona una imagen.";
+                return;
+            }
+
+            if (!albumNameInput.value.trim()) {
+                document.getElementById("message").textContent = "Por favor, ingresa el nombre del álbum.";
+                return;
+            }
+
+            formData.append("image", fileInput.files[0]);
+
+            const response = await fetch(`/upload/${albumNameInput.value.trim()}`, {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById("message").textContent = result.message ? result.message : "Error al subir la imagen.";
+            setTimeout(() => {
+                location.reload(); // Recargar la página después de 1.5 segundos
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen</title>
+    <link rel="stylesheet" href="/estilo_album.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Subir Imagen</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="image" id="imageInput" accept="image/*">
+            <button type="submit">Subir Imagen</button>
+        </form>
+        <div id="message"></div>
+        <div id="imagePreview"></div>
+    </div>
+
+    <script>
+        document.getElementById("imageInput").addEventListener("change", function(event) {
+            const preview = document.getElementById("imagePreview");
+            preview.innerHTML = "";
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById("uploadForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            const fileInput = document.getElementById("imageInput");
+
+            if (!fileInput.files.length) {
+                document.getElementById("message").textContent = "Por favor, selecciona una imagen.";
+                return;
+            }
+
+            formData.append("image", fileInput.files[0]);
+
+            const response = await fetch("/upload", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById("message").textContent = result.url ? "¡Imagen subida con éxito!" : "Error al subir la imagen.";
+            setTimeout(() => {
+                location.reload(); // Recargar la página después de 1.5 segundos
+            }, 1500);
+      
+        });
+    </script>
+</body>
+</html>-->

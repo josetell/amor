@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Tiempo Juntos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+     
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: linear-gradient(to bottom, #ffffff, #f5f5f5);
+        }
+
+        .container {
+            
+            border:1cm;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .header {
+            margin-bottom: 5px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #d1548f;
+            margin-bottom: 40px;
+            font-weight: 200;
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            font-size: 3rem;
+            color: #b0306a;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .counter {
+            border: 6px solid #d1548f; /* Borde azul */
+            background-color: rgb(247, 244, 244);
+            border-radius: 15px;
+            padding: 20px;
+            height: 350px;
+            margin-bottom: 40px;
+        }
+
+        .counter-title {
+            font-size: 1.2rem;
+            color: #d1548f;
+            margin-bottom: 15px;
+            font-weight: 200;
+        }
+
+        .time-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .imag_F {
+            width: 27%; /* Ocupa el 50% del contenedor */
+            height: auto; /* Mantiene la proporción */
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #b0306a;
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            color: #d1548f;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .couple-title {
+            
+            font-size: 2rem;
+            color: #d1548f;
+            margin: 30px 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .album-btn {
+            background-color: #d1548f;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(208, 92, 144, 0.3);
+        }
+
+        .album-btn:hover {
+            background-color: #b0306a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(208, 92, 144, 0.4);
+        }
+
+        .album-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .heart-icon {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .heart-icon:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            font-size: 50px;
+        }
+
+        .heart-icon:nth-child(2) {
+            bottom: 15%;
+            right: 10%;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body> <div class="heart-icon">❤️</div>
+    <div class="container">
+        <div class="header">
+            <h1> ❤️Primer Año Juntos❤️</h1>
+        </div>
+        <div class="heart-icon">❤️</div>
+        <div class="counter">
+            <p class="counter-title">❤️- Primera Cita - Centro Historico  -❤️</p>
+            <div class="time-container">
+                <img class="imag_F" src="imagenes/primera_cita.jpeg" alt="Año Nuevo">
+            </div>
+        </div>
+
+        <div class="couple-title">Emanuel & Maggy</div>
+        <div class="heart-icon">❤️</div>  
+        <div class="buttons-container">
+            <a href="album18" class="album-btn " style="text-decoration: none; ">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M4 4h7V2H4c-1.1 0-2 .9-2 2v7h2V4zm6 9l-4 5h12l-3-4-2.03 2.71L10 13zm7-4.5c0-.83-.67-1.5-1.5-1.5S14 7.67 14 8.5s.67 1.5 1.5 1.5S17 9.33 17 8.5zM20 2h-7v2h7v7h2V4c0-1.1-.9-2-2-2zm0 18h-7v2h7c1.1 0 2-.9 2-2v-7h-2v7zM4 13H2v7c0 1.1.9 2 2 2h7v-2H4v-7z"/>
+                </svg>
+                Ver Álbum
+            </a>
+            <a href="galeria" class="album-btn" style="text-decoration: none; ">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12.0027 21C7.28739 21 4.92973 21 3.46487 19.5355C2 18.0711 2 15.714 2 11V7.94427C2 6.1278 2 5.21956 2.38042 4.53806C2.6516 4.05227 3.05255 3.65142 3.53848 3.38032C4.22017 3 5.12865 3 6.94562 3C8.10968 3 8.69172 3 9.20122 3.19101C10.3645 3.62712 10.8442 4.68358 11.3691 5.73313L12.0027 7M8.00163 7H16.754C18.8613 7 19.9149 7 20.6718 7.50559C20.9995 7.72447 21.2808 8.00572 21.4997 8.33329C21.8937 8.92282 21.9808 9.69244 22 11"/>
+                </svg>
+                Añadir Fotos
+            </a>
+        </div>
+    </div>
+    <div class="heart-icon"> <h1>❤️❤️</h1></div>
+
+    <script>
+        // Contador de tiempo juntos
+        function updateCounter() {
+            // Aquí iría la lógica para calcular el tiempo
+            // Por ahora es estático como en tu ejemplo
+        }
+        
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+</body>
+</html>
