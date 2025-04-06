@@ -60,6 +60,19 @@ router.get('/elec_album_21', (req, res) => res.render('elec_album_21.ejs'));
 router.get('/elec_album_22', (req, res) => res.render('elec_album_22.ejs'));
 
 
+
+
+router.get('/videos', (req, res) => res.render('videos.ejs'));
+router.get('/videos1', (req, res) => res.render('videos1.ejs'));
+router.get('/videos2', (req, res) => res.render('videos2.ejs'));
+router.get('/videos3', (req, res) => res.render('videos3.ejs'));
+router.get('/videos4', (req, res) => res.render('videos4.ejs'));
+router.get('/videos5', (req, res) => res.render('videos5.ejs'));
+router.get('/videos6', (req, res) => res.render('videos6.ejs'));
+
+
+
+
 // Ruta para mostrar los álbumes
 router.get('/carga_imagenes', (req, res) => {
     res.render('carga_imagenes.ejs', { albums });

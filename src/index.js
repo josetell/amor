@@ -21,6 +21,7 @@ app.use(express.static(join(direccion, 'public')));
 app.use(express.static(join(direccion, 'uploads')));
 app.use(express.static(join(direccion, 'js')));
 app.use(express.json()); // Permite manejar JSON en peticiones
+app.get('/videos', (req, res) => { res.sendFile(join(direccion, 'public','videos'));});
 
 
 

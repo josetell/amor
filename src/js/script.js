@@ -41,11 +41,11 @@ function mostrarContador() {
     const container = document.querySelector('.container');
     const seccion_galeria= document.querySelector('.seccion-galeria');
     const seccionContador = document.getElementById('seccion-contador');
-
+    const seccionVideo = document.getElementById('seccion-video');
     // Ocultar la caja fuerte
     container.style.display = 'none';
     seccion_galeria.style.display = 'none';
-
+    seccionVideo.style.display = 'none';
     // Mostrar el contador
     seccionContador.style.display = 'block';
 }
@@ -94,7 +94,7 @@ function actualizarContador() {
     document.getElementById('segundos').textContent = segundos;
     // Ocultar otras secciones
     
-   
+    seccionVideo.style.display = 'none';
     seccionGaleria.style.display = 'none';
 }
 
@@ -107,23 +107,39 @@ function mostrarGaleria() {
     const seccionContador = document.getElementById('seccion-contador');
     const seccionGaleria = document.getElementById('seccion-galeria');
     const seccionCarta = document.getElementById('seccion-carta');
-
+    const seccionVideo = document.getElementById('seccion-video');
     // Ocultar otras secciones
     seccionContador.style.display = 'none';
     seccionCarta.style.display = 'none';
 
     // Mostrar la galería
     seccionGaleria.style.display = 'block';
+    seccionVideo.style.display = 'none';
+}
+
+
+function mostrarVideo() {
+    const seccionContador = document.getElementById('seccion-contador');
+    const seccionGaleria = document.getElementById('seccion-galeria');
+    const seccionCarta = document.getElementById('seccion-carta');
+    const seccionVideo = document.getElementById('seccion-video');
+
+    // Ocultar otras secciones
+    seccionContador.style.display = 'none';
+    seccionCarta.style.display = 'none';
+    seccionGaleria.style.display = 'none';
+    // Mostrar la galería
+    seccionVideo.style.display = 'block';
 }
 
 // Función para mostrar la carta
 function mostrarCarta() {
     const seccionGaleria = document.getElementById('seccion-galeria');
     const seccionCarta = document.getElementById('seccion-carta');
-
+    const seccionVideo = document.getElementById('seccion-video');
     // Ocultar la galería
     seccionGaleria.style.display = 'none';
-
+    seccionVideo.style.display = 'none';
     // Mostrar la carta
     seccionCarta.style.display = 'block';
 }
