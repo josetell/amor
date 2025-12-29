@@ -37,7 +37,7 @@ router.get('/album22', (req, res) => res.render('album22.ejs'));
 router.get('/album23', (req, res) => res.render('album23.ejs'));
 router.get('/album24', (req, res) => res.render('album24.ejs'));
 router.get('/album25', (req, res) => res.render('album25.ejs'));
-
+router.get('/album26', (req, res) => res.render('album26.ejs'));
 
 router.get('/elec_album_1', (req, res) => res.render('elec_album_1.ejs'));
 router.get('/elec_album_2', (req, res) => res.render('elec_album_2.ejs'));
@@ -64,6 +64,7 @@ router.get('/elec_album_22', (req, res) => res.render('elec_album_22.ejs'));
 router.get('/elec_album_23', (req, res) => res.render('elec_album_23.ejs'));
 router.get('/elec_album_24', (req, res) => res.render('elec_album_24.ejs'));
 router.get('/elec_album_25', (req, res) => res.render('elec_album_25.ejs'));
+router.get('/elec_album_26', (req, res) => res.render('elec_album_26.ejs'));
 
 router.get('/videos', (req, res) => res.render('videos.ejs'));
 router.get('/videos1', (req, res) => res.render('videos1.ejs'));

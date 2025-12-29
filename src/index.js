@@ -23,6 +23,21 @@ app.use(express.static(join(direccion, 'js')));
 app.use(express.json()); // Permite manejar JSON en peticiones
 app.get('/videos', (req, res) => { res.sendFile(join(direccion, 'public','videos'));});
 
+app.get('/album26', (req, res) => {
+    try {
+        const albumPath = join(direccion, 'uploads', 'cumple mio'); // Ruta de las imágenes
+        const images = fs.readdirSync(albumPath).filter(file => /\.(jpeg|png|gif)$/i.test(file)); // Filtramos imágenes
+
+        // Generar las URLs de las imágenes
+        const imageUrls = images.map(image => `cumple mio/${image}`);
+
+        // Renderizamos la vista con las imágenes
+        res.render('album26', { images: imageUrls });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error al cargar las imágenes');
+    }
+});
 
 app.get('/album25', (req, res) => {
     try {
