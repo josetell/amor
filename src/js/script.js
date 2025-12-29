@@ -117,6 +117,19 @@ function mostrarGaleria() {
     seccionVideo.style.display = 'none';
 }
 
+function mostrarGaleria1() {
+    const seccionContador = document.getElementById('seccion-contador');
+    const seccionGaleria = document.getElementById('seccion-galeria');
+    const seccionCarta = document.getElementById('seccion-carta1');
+    const seccionVideo = document.getElementById('seccion-video');
+    // Ocultar otras secciones
+    seccionContador.style.display = 'none';
+    seccionCarta.style.display = 'none';
+
+    // Mostrar la galería
+    seccionGaleria.style.display = 'block';
+    seccionVideo.style.display = 'none';
+}
 
 function mostrarVideo() {
     const seccionContador = document.getElementById('seccion-contador');
@@ -143,4 +156,15 @@ function mostrarCarta() {
     // Mostrar la carta
     seccionCarta.style.display = 'block';
 }
+function mostrarCartaNavidad() {
+    const seccionGaleria = document.getElementById('seccion-galeria');
+    const seccionCarta1 = document.getElementById('seccion-carta1');
+    const seccionVideo = document.getElementById('seccion-video');
+    // Ocultar la galería
+    seccionGaleria.style.display = 'none';
+    seccionVideo.style.display = 'none';
+    // Mostrar la carta
+    seccionCarta1.style.display = 'block';
+}
+
 
