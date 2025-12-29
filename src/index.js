@@ -24,7 +24,53 @@ app.use(express.json()); // Permite manejar JSON en peticiones
 app.get('/videos', (req, res) => { res.sendFile(join(direccion, 'public','videos'));});
 
 
+app.get('/album25', (req, res) => {
+    try {
+        const albumPath = join(direccion, 'uploads', 'peru'); // Ruta de las imágenes
+        const images = fs.readdirSync(albumPath).filter(file => /\.(jpeg|png|gif)$/i.test(file)); // Filtramos imágenes
 
+        // Generar las URLs de las imágenes
+        const imageUrls = images.map(image => `peru/${image}`);
+
+        // Renderizamos la vista con las imágenes
+        res.render('album25', { images: imageUrls });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error al cargar las imágenes');
+    }
+});
+app.get('/album24', (req, res) => {
+    try {
+        const albumPath = join(direccion, 'uploads', 'cartegena'); // Ruta de las imágenes
+        const images = fs.readdirSync(albumPath).filter(file => /\.(jpeg|png|gif)$/i.test(file)); // Filtramos imágenes
+
+        // Generar las URLs de las imágenes
+        const imageUrls = images.map(image => `cartegena/${image}`);
+
+        // Renderizamos la vista con las imágenes
+        res.render('album24', { images: imageUrls });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error al cargar las imágenes');
+    }
+});
+
+
+app.get('/album23', (req, res) => {
+    try {
+        const albumPath = join(direccion, 'uploads', 'cumple amor'); // Ruta de las imágenes
+        const images = fs.readdirSync(albumPath).filter(file => /\.(jpeg|png|gif)$/i.test(file)); // Filtramos imágenes
+
+        // Generar las URLs de las imágenes
+        const imageUrls = images.map(image => `cumple amor/${image}`);
+
+        // Renderizamos la vista con las imágenes
+        res.render('album23', { images: imageUrls });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error al cargar las imágenes');
+    }
+});
 
 
 app.get('/album22', (req, res) => {
