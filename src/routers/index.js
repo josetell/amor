@@ -74,6 +74,7 @@ router.get('/videos4', (req, res) => res.render('videos4.ejs'));
 router.get('/videos5', (req, res) => res.render('videos5.ejs'));
 router.get('/videos6', (req, res) => res.render('videos6.ejs'));
 router.get('/videos7', (req, res) => res.render('videos7.ejs'));
+router.get('/videos8', (req, res) => res.render('videos8.ejs'));
 
 
 
